@@ -159,52 +159,47 @@ class logd {
 
     }
 
-    fun sumaComplejos(
-        realA: String,
-        realB: String,
-        imaA: String,
-        imaB: String,
-        opera: String
-    ): String {
+    fun sumaComplejos(realA: String,  realB: String,  imaA: String,  imaB: String,  opera: String): String {
+        val signo = getOperacion(opera)
 
         // (32+55i) + (65+9i)
-        val rA: Double
-        val rB: Double
-        val iA: Double
-        val iB: Double
-        if (realA.contains("/")) {
-            rA = toDecimal(realA)
-        } else {
-            rA = realA.toDouble()
+        val rA:Double
+        val rB:Double
+        val iA:Double
+        val iB:Double
+        if(realA.contains("/")){
+            rA= toDecimal(realA)
+        }else{
+            rA= realA.toDouble()
         }
-        if (realB.contains("/")) {
+        if(realB.contains("/")){
             rB = toDecimal(realB)
-        } else {
-            rB = realB.toDouble()
+        }else{
+            rB= realB.toDouble()
         }
-        if (imaA.contains("/")) {
+        if (imaA.contains("/")){
             iA = toDecimal(imaA)
-        } else {
-            iA = imaA.toDouble()
+        }else{
+            iA= imaA.toDouble()
         }
-        if (imaB.contains("/")) {
+        if (imaB.contains("/")){
             iB = toDecimal(imaB)
-        } else {
+        }else{
             iB = imaB.toDouble()
         }
 
         val sumaReal: Double
         val sumaIma: Double
-        if (opera == "+") {
+        if (signo == "+"){
             sumaReal = rA + rB
             sumaIma = iA + iB
-        } else {
+        }else{
             sumaReal = rA - rB
             sumaIma = iA - iB
         }
-        if (sumaIma < 0) {
+        if (sumaIma<0){
             return "(${sumaReal}${sumaIma}i)"
-        } else {
+        }else{
             return "(${sumaReal}+${sumaIma}i)"
         }
     }

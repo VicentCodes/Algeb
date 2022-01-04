@@ -119,7 +119,6 @@ class numComplejosAC : AppCompatActivity() {
     }
     fun resOper(tvOper:EditText, tvRes:TextView) {
             operacion = tvOper.text.toString()
-            operacion.replace("\uD835\uDC56", "i")
             val operA = operL.getA(operacion)
             val operB = operL.getB(operacion)
             val relA = operL.getReal(operA)
