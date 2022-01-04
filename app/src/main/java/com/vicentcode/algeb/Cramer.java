@@ -1,4 +1,4 @@
-package com.example.algeb;
+package com.vicentcode.algeb;
 
 
 

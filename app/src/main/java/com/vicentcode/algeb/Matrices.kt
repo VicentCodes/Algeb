@@ -1,7 +1,8 @@
-package com.example.algeb
+package com.vicentcode.algeb
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.algeb.R
 
 class Matrices : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1c2029"
-    tools:context=".numComplejosAC">
+    tools:context="com.vicentcode.algeb.numComplejosAC">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvSistema"

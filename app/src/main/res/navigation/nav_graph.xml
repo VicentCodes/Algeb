@@ -6,7 +6,7 @@
     app:startDestination="@id/selectOrden">
     <fragment
         android:id="@+id/matrizLlenado"
-        android:name="com.example.algeb.MatrizLlenado"
+        android:name="com.vicentcode.algeb.MatrizLlenado"
         android:label="fragment_matriz_llenado"
         tools:layout="@layout/fragment_matriz_llenado" >
         <action
@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/moreOptionsMatriz"
-        android:name="com.example.algeb.MoreOptionsMatriz"
+        android:name="com.vicentcode.algeb.MoreOptionsMatriz"
         android:label="fragment_more_options_matriz"
         tools:layout="@layout/fragment_more_options_matriz" >
         <action
@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/selectOrden"
-        android:name="com.example.algeb.SelectOrden"
+        android:name="com.vicentcode.algeb.SelectOrden"
         android:label="fragment_select_orden"
         tools:layout="@layout/fragment_select_orden" >
         <action

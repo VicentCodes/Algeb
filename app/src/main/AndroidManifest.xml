@@ -12,21 +12,21 @@
         android:theme="@style/Theme.Algeb.NoActionBar"
         tools:replace="android:icon">
         <activity
-            android:name=".SistemasEcuaciones"
+            android:name="com.vicentcode.algeb.SistemasEcuaciones"
             android:exported="false" />
-        <activity android:name=".MainActivity"
+        <activity android:name="com.vicentcode.algeb.MainActivity"
             android:exported="false"/>
         <activity
-            android:name=".Matrices"
+            android:name="com.vicentcode.algeb.Matrices"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".numComplejosAC"
+            android:name="com.vicentcode.algeb.numComplejosAC"
             android:exported="false"
             android:theme="@style/Theme.Algeb.NoActionBar"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".Splash"
+            android:name="com.vicentcode.algeb.Splash"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             android:windowSoftInputMode="adjustNothing">

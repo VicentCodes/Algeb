@@ -6,7 +6,7 @@
     android:background="#1c2029"
 
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.vicentcode.algeb.MainActivity">
 
     <ScrollView
         android:layout_width="0dp"

@@ -1,4 +1,4 @@
-package com.example.algeb
+package com.vicentcode.algeb
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -11,6 +11,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
+import com.example.algeb.R
 import kotlin.math.abs
 import kotlin.math.roundToInt
 

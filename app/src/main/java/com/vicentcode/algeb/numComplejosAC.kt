@@ -1,4 +1,4 @@
-package com.example.algeb
+package com.vicentcode.algeb
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.core.view.isVisible
+import com.example.algeb.R
 import com.example.algeb.databinding.ActivityNumComplejosBinding
 import java.util.*
 
@@ -52,7 +53,7 @@ class numComplejosAC : AppCompatActivity() {
                 }
             }
             buttonAc.setOnClickListener{ expres.setText("")
-                data=""
+                data =""
                 answer.setText("")
             }
 

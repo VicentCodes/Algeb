@@ -1,4 +1,4 @@
-package com.example.algeb
+package com.vicentcode.algeb
 import java.lang.String.valueOf
 import kotlin.math.roundToInt
 import kotlin.math.abs

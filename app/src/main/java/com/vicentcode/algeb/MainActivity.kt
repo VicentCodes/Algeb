@@ -1,10 +1,8 @@
-package com.example.algeb
+package com.vicentcode.algeb
 
-import android.app.PendingIntent.getActivity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import com.example.algeb.databinding.ActivityMainBinding
 
 
