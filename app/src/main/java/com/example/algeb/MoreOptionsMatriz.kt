@@ -22,6 +22,7 @@ private const val ARG_PARAM2 = "param2"
  */
 class MoreOptionsMatriz : Fragment() , RadioGroup.OnCheckedChangeListener {
     val args: MoreOptionsMatrizArgs by navArgs<MoreOptionsMatrizArgs>()
+
     private lateinit var adaptador: ArrayAdapter<String>
 
     var rbdeter: RadioButton? = null
@@ -119,7 +120,8 @@ class MoreOptionsMatriz : Fragment() , RadioGroup.OnCheckedChangeListener {
                 gridMOriginal!!.adapter = adaptador
                 gridMOriginal!!.numColumns = args.orden
 
-                tvTitulo!!.text = "|x| = ${toIntsDiv(determinante.toString())}"
+                tvTitulo!!.text = getString(R.string.Determinante)
+                tvDeter!!.text = "|x| = ${toIntsDiv(determinante.toString())}"
 
             }
             rbTraspuesta?.id -> tvTitulo?.let {

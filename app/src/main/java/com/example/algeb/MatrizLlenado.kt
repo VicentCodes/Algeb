@@ -10,6 +10,7 @@ import android.widget.*
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.navArgs
 import kotlin.math.abs
 import kotlin.math.roundToInt
 
@@ -21,11 +22,10 @@ class MatrizLlenado : Fragment() {
     private var listPOS: MutableList<String> = ArrayList()
     private var listx: MutableList<String> = ArrayList()
     private var listInversaFrac: MutableList<String> = ArrayList()
-
     private var posList = 0
-    private val col = 2
+    private var col = 2
     var visi = false
-
+    val dd: MatrizLlenadoArgs by navArgs<MatrizLlenadoArgs>()
     var seg = 1
     var prim = 1
     var textED: String = ""
@@ -41,25 +41,26 @@ class MatrizLlenado : Fragment() {
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        col = dd.orden
 
         val gridInversa = view.findViewById<GridView>(R.id.grid)
         val gridMOriginal = view.findViewById<GridView>(R.id.gridOriginal)
 
         val edNum = view.findViewById<EditText>(R.id.edNum)
-        val btnInver = view.findViewById<Button>(R.id.btnInversa)
         val btnMoreOptions = view.findViewById<Button>(R.id.btnPop)
         val tvPos = view.findViewById<TextView>(R.id.tvPos)
+        val tvPos2 = view.findViewById<TextView>(R.id.tvPos2)
+
         if (visi) {
-            btnInver.isVisible = true
             btnMoreOptions.isVisible = true
             edNum.isVisible = false
         } else {
-            btnInver.isVisible = false
             btnMoreOptions.isVisible = false
             edNum.isVisible = true
 
         }
+        tvPos2.isVisible = !tvPos2.isVisible
+
 
         if (list.size == 0) {
             listPOS = fillGrid(col)
@@ -126,7 +127,6 @@ class MatrizLlenado : Fragment() {
                         }
                     } else {
 
-                        btnInver.isVisible = true
                         btnMoreOptions.isVisible = true
                         visi = true
                     }
@@ -154,7 +154,22 @@ class MatrizLlenado : Fragment() {
                         if (prim == col) {
                             if (list.size == col * col) {
                                 tvPos.text = "Matriz Completa"
-                                btnInver.isVisible = true
+                                tvPos2.text = "Matriz Inversa:"
+                                tvPos2.isVisible = true
+
+
+                                listInversaFrac = inversassFrac(col, list)
+                                if (listInversaFrac.size == 0) {
+                                    tvPos.text = "La matriz no tiene inversa"
+                                } else {
+                                    adaptador = ArrayAdapter(
+                                        requireContext(),
+                                        R.layout.item, listInversaFrac
+                                    )
+                                    gridInversa.adapter = adaptador
+                                    gridInversa.numColumns = col
+
+                                }
                                 btnMoreOptions.isVisible = true
                                 edNum.isVisible = false
                                 visi = true
@@ -212,8 +227,6 @@ class MatrizLlenado : Fragment() {
                             Toast.LENGTH_LONG
                         ).show()
                     } else {
-                        btnInver.isVisible = true
-                        btnInver.isVisible = true
                         visi = true
 
                     }
@@ -226,20 +239,7 @@ class MatrizLlenado : Fragment() {
             false
         })
 
-        btnInver.setOnClickListener {
-            listInversaFrac = inversassFrac(col, list)
-            if (listInversaFrac.size == 0) {
-                tvPos.text = "La matriz no tiene inversa"
-            } else {
-                adaptador = ArrayAdapter(
-                    requireContext(),
-                    R.layout.item, listInversaFrac
-                )
-                gridInversa.adapter = adaptador
-                gridInversa.numColumns = col
 
-            }
-        }
 
         btnMoreOptions.setOnClickListener {
             val action =
@@ -277,7 +277,9 @@ fun fillGrid(col: Int): MutableList<String> {
     }
     return list
 
-}fun traspuesta(col: Int, listSTR: MutableList<String>): MutableList<String> {
+}
+
+fun traspuesta(col: Int, listSTR: MutableList<String>): MutableList<String> {
 
     val listTraspuesta: MutableList<String> = ArrayList()
 
@@ -377,6 +379,7 @@ fun inversass(col: Int, listSTR: MutableList<String>): MutableList<String> {
     }
 }
 
+
 fun toFraction(d: Double): String {
     val negligibleRatio = 0.00000001
 
@@ -390,7 +393,7 @@ fun toFraction(d: Double): String {
             val asd = a.replace(",", "/")
             if (asd.replace("\\s".toRegex(), "").equals("0/1")) {
                 return d.toString()
-            }else{
+            } else {
                 return asd.replace("\\s".toRegex(), "")
             }
         }
@@ -481,7 +484,6 @@ fun inversassFrac(col: Int, listSTR: MutableList<String>): MutableList<String> {
     } else {
 
 
-
         var resID: Double
         val listResId: MutableList<String> = ArrayList()
 
@@ -527,6 +529,7 @@ fun inversassFrac(col: Int, listSTR: MutableList<String>): MutableList<String> {
 
     }
 }
+
 
 
 

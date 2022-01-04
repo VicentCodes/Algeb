@@ -12,19 +12,24 @@
         android:theme="@style/Theme.Algeb.NoActionBar"
         tools:replace="android:icon">
         <activity
-            android:windowSoftInputMode="adjustNothing"
-            android:name=".Matrices"
+            android:name=".SistemasEcuaciones"
             android:exported="false" />
+        <activity android:name=".MainActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".Matrices"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
         <activity
             android:name=".numComplejosAC"
             android:exported="false"
-            android:windowSoftInputMode="adjustNothing"
-            android:theme="@style/Theme.Algeb.NoActionBar" />
+            android:theme="@style/Theme.Algeb.NoActionBar"
+            android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Splash"
             android:exported="true"
-            android:windowSoftInputMode="adjustNothing"
-            android:theme="@style/Theme.Algeb.NoActionBar">
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            android:windowSoftInputMode="adjustNothing">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

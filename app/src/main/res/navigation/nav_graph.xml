@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/matrizLlenado">
+    app:startDestination="@id/selectOrden">
     <fragment
         android:id="@+id/matrizLlenado"
         android:name="com.example.algeb.MatrizLlenado"
@@ -12,6 +12,12 @@
         <action
             android:id="@+id/action_matrizLlenado_to_moreOptionsMatriz"
             app:destination="@id/moreOptionsMatriz" />
+        <action
+            android:id="@+id/action_matrizLlenado_to_selectOrden"
+            app:destination="@id/selectOrden" />
+        <argument
+            android:name="orden"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/moreOptionsMatriz"
@@ -27,5 +33,17 @@
         <argument
             android:name="orden"
             app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectOrden"
+        android:name="com.example.algeb.SelectOrden"
+        android:label="fragment_select_orden"
+        tools:layout="@layout/fragment_select_orden" >
+        <action
+            android:id="@+id/action_selectOrden_to_matrizLlenado"
+            app:destination="@id/matrizLlenado"
+            app:popUpTo="@id/selectOrden"
+            app:popUpToInclusive="true"
+            app:launchSingleTop="true" />
     </fragment>
 </navigation>

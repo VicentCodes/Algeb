@@ -22,6 +22,10 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(applicationContext, Matrices::class.java)
                 startActivity(intent)
             }
+            cvSistema.setOnClickListener {
+                val intent = Intent(applicationContext, SistemasEcuaciones::class.java)
+                startActivity(intent)
+            }
 
 
 
