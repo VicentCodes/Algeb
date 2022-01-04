@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/matrizLlenado">
+    <fragment
+        android:id="@+id/matrizLlenado"
+        android:name="com.example.algeb.MatrizLlenado"
+        android:label="fragment_matriz_llenado"
+        tools:layout="@layout/fragment_matriz_llenado" >
+        <action
+            android:id="@+id/action_matrizLlenado_to_moreOptionsMatriz"
+            app:destination="@id/moreOptionsMatriz" />
+    </fragment>
+    <fragment
+        android:id="@+id/moreOptionsMatriz"
+        android:name="com.example.algeb.MoreOptionsMatriz"
+        android:label="fragment_more_options_matriz"
+        tools:layout="@layout/fragment_more_options_matriz" >
+        <action
+            android:id="@+id/action_moreOptionsMatriz_to_matrizLlenado"
+            app:destination="@id/matrizLlenado" />
+        <argument
+            android:name="lista"
+            app:argType="string[]" />
+        <argument
+            android:name="orden"
+            app:argType="integer" />
+    </fragment>
+</navigation>
